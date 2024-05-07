@@ -349,12 +349,5 @@ def create_matrix(pbp, file_path):
 	possessions = pd.DataFrame(possession_matrix, columns=col_names)
 	return possessions
 
-from pathlib import Path
 
-cwd = Path.cwd()
-
-root = cwd.parent.absolute()
-
-pbp_2022_23 = pd.read_csv(root / 'created_possession_data' / 'pbp_with_players' / 'pbp_2022_reg.csv', index_col=0)
-create_matrix(pbp_2022_23, 'compare.csv')
 
