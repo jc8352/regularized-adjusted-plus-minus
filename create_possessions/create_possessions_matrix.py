@@ -277,6 +277,8 @@ def create_matrix(pbp, file_path):
 			outcome, j = find_poss_end(i, HOME_COLUMN, AWAY_COLUMN, 0, pbp)
 			possession_matrix.append([pbp.iloc[i, GAME_ID_COL], pbp.iloc[i, PLAYER6], pbp.iloc[i, PLAYER7], pbp.iloc[i, PLAYER8], pbp.iloc[i, PLAYER9], pbp.iloc[i, PLAYER10], pbp.iloc[i, PLAYER1], pbp.iloc[i, PLAYER2], pbp.iloc[i, PLAYER3], pbp.iloc[i, PLAYER4], pbp.iloc[i, PLAYER5], 1, pbp.iloc[i, PCTIMESTRING], outcome])
 			i = j
+		elif 'AWAY.FROM.PLAY.FOUL' in pbp.iloc[i, AWAY_COLUMN]:
+			print('away from play foul:', i)
 		elif 'FOUL' in pbp.iloc[i, AWAY_COLUMN] and 'T.FOUL ' not in pbp.iloc[i, AWAY_COLUMN]:
 			temp_ind = i
 			temp_ind+=1
@@ -325,6 +327,8 @@ def create_matrix(pbp, file_path):
 			outcome, j = find_poss_end(i, AWAY_COLUMN, HOME_COLUMN, 0, pbp)
 			possession_matrix.append([pbp.iloc[i, GAME_ID_COL], pbp.iloc[i, PLAYER1], pbp.iloc[i, PLAYER2], pbp.iloc[i, PLAYER3], pbp.iloc[i, PLAYER4], pbp.iloc[i, PLAYER5], pbp.iloc[i, PLAYER6], pbp.iloc[i, PLAYER7], pbp.iloc[i, PLAYER8], pbp.iloc[i, PLAYER9], pbp.iloc[i, PLAYER10], 0, pbp.iloc[i, PCTIMESTRING], outcome])
 			i = j
+		elif 'AWAY.FROM.PLAY.FOUL' in pbp.iloc[i, HOME_COLUMN]:
+			print('away from play foul:', i)
 		elif 'FOUL' in pbp.iloc[i, HOME_COLUMN] and 'T.FOUL ' not in pbp.iloc[i, HOME_COLUMN]:
 			temp_ind = i
 			temp_ind+=1
