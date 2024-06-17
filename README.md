@@ -28,7 +28,7 @@ To generate the data and perform the regression:
 1. **Run the Main Script**:
    ```bash
    python3 main.py
-  
+   ```
 This script processes play-by-play data for the 2021-22 season, generates the required matrices, and performs ridge regression. Intermediate data is stored in the `created_possession_data` folder, and final regression results are saved in `regression_results`.
 
 2. **View Results**: 
